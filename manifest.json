@@ -1,0 +1,9 @@
+{
+  "name": "Fiona's Closet",
+  "short_name": "Closet",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f7f5",
+  "theme_color": "#111111",
+  "description": "A private digital wardrobe and outfit mix-and-match app."
+}

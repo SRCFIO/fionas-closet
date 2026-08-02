@@ -1,0 +1,205 @@
+[
+  {
+    "id": "seed-1",
+    "name": "Floral Pants",
+    "category": "Bottoms",
+    "image": "assets/item_01.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-2",
+    "name": "Gray Cargo Jeans",
+    "category": "Bottoms",
+    "image": "assets/item_02.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-3",
+    "name": "Black Cargo Pants",
+    "category": "Bottoms",
+    "image": "assets/item_03.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-4",
+    "name": "Plaid Skirt",
+    "category": "Bottoms",
+    "image": "assets/item_04.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-5",
+    "name": "Black Skort",
+    "category": "Bottoms",
+    "image": "assets/item_05.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-6",
+    "name": "Gray Skort",
+    "category": "Bottoms",
+    "image": "assets/item_06.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-7",
+    "name": "Black Pleated Skort",
+    "category": "Bottoms",
+    "image": "assets/item_07.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-8",
+    "name": "Denim Shorts",
+    "category": "Bottoms",
+    "image": "assets/item_08.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-9",
+    "name": "Cream Pleated Skort",
+    "category": "Bottoms",
+    "image": "assets/item_09.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-10",
+    "name": "Gray Polo",
+    "category": "Tops",
+    "image": "assets/item_10.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-11",
+    "name": "Brown Striped Knit",
+    "category": "Tops",
+    "image": "assets/item_11.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-12",
+    "name": "Gray Rib Knit",
+    "category": "Tops",
+    "image": "assets/item_12.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-13",
+    "name": "Gray Graphic Tee",
+    "category": "Tops",
+    "image": "assets/item_13.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-14",
+    "name": "Black Dodgers Top",
+    "category": "Tops",
+    "image": "assets/item_14.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-15",
+    "name": "SF Graphic Tee",
+    "category": "Tops",
+    "image": "assets/item_15.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-16",
+    "name": "White Adidas Polo",
+    "category": "Tops",
+    "image": "assets/item_16.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-17",
+    "name": "Pink Stripe Tee",
+    "category": "Tops",
+    "image": "assets/item_17.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-18",
+    "name": "Black 96 Jersey",
+    "category": "Tops",
+    "image": "assets/item_18.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-19",
+    "name": "Lilac Tank",
+    "category": "Tops",
+    "image": "assets/item_19.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-20",
+    "name": "Blue Tank",
+    "category": "Tops",
+    "image": "assets/item_20.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-21",
+    "name": "Cream Tank",
+    "category": "Tops",
+    "image": "assets/item_21.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-22",
+    "name": "White Camisole",
+    "category": "Tops",
+    "image": "assets/item_22.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-23",
+    "name": "Cream Rib Tank",
+    "category": "Tops",
+    "image": "assets/item_23.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-24",
+    "name": "White Braided Strap Top",
+    "category": "Tops",
+    "image": "assets/item_24.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-25",
+    "name": "Cream Blouse",
+    "category": "Tops",
+    "image": "assets/item_25.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-26",
+    "name": "White Cardigan",
+    "category": "Outerwear",
+    "image": "assets/item_26.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-27",
+    "name": "Blue Ruffle Blouse",
+    "category": "Tops",
+    "image": "assets/item_27.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-28",
+    "name": "Pink Pinstripe Blouse",
+    "category": "Tops",
+    "image": "assets/item_28.jpeg",
+    "seed": true
+  },
+  {
+    "id": "seed-29",
+    "name": "Blue Pinstripe Blouse",
+    "category": "Tops",
+    "image": "assets/item_29.jpeg",
+    "seed": true
+  }
+]

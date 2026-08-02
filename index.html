@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111111" />
+  <title>Fiona's Closet</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <div class="eyebrow">DIGITAL WARDROBE</div>
+      <h1>Fiona's Closet</h1>
+    </div>
+    <button id="addBtn" class="primary">+ Add item</button>
+  </header>
+
+  <nav class="tabs">
+    <button data-tab="closet" class="active">Closet</button>
+    <button data-tab="builder">Mix & Match</button>
+    <button data-tab="saved">Saved Looks</button>
+  </nav>
+
+  <main>
+    <section id="closet" class="tab-panel active">
+      <div class="toolbar">
+        <div class="chips" id="filterChips"></div>
+        <input id="searchInput" type="search" placeholder="Search wardrobe…" />
+      </div>
+      <div id="closetGrid" class="grid"></div>
+    </section>
+
+    <section id="builder" class="tab-panel">
+      <div class="builder-actions">
+        <button id="shuffleBtn">Shuffle look</button>
+        <button id="saveLookBtn" class="primary">Save look</button>
+      </div>
+
+      <div class="look-canvas">
+        <div class="look-slot">
+          <div class="slot-label">Top</div>
+          <img id="topPreview" alt="Selected top" />
+          <div class="slot-placeholder" id="topPlaceholder">Choose a top</div>
+        </div>
+        <div class="look-slot">
+          <div class="slot-label">Bottom</div>
+          <img id="bottomPreview" alt="Selected bottom" />
+          <div class="slot-placeholder" id="bottomPlaceholder">Choose a bottom</div>
+        </div>
+      </div>
+
+      <div class="picker-block">
+        <h3>Tops</h3>
+        <div id="topPicker" class="picker-row"></div>
+      </div>
+      <div class="picker-block">
+        <h3>Bottoms</h3>
+        <div id="bottomPicker" class="picker-row"></div>
+      </div>
+    </section>
+
+    <section id="saved" class="tab-panel">
+      <div id="savedLooks" class="saved-grid"></div>
+    </section>
+  </main>
+
+  <dialog id="itemDialog">
+    <form method="dialog" id="itemForm">
+      <h2>Add clothing</h2>
+      <label>Name<input id="itemName" required placeholder="e.g. Blue cardigan" /></label>
+      <label>Category
+        <select id="itemCategory">
+          <option>Tops</option>
+          <option>Bottoms</option>
+          <option>Outerwear</option>
+          <option>Shoes</option>
+          <option>Accessories</option>
+        </select>
+      </label>
+      <label>Photo<input id="itemPhoto" type="file" accept="image/*" capture="environment" required /></label>
+      <div class="dialog-actions">
+        <button value="cancel">Cancel</button>
+        <button id="saveItemBtn" value="default" class="primary">Add</button>
+      </div>
+    </form>
+  </dialog>
+
+  <template id="itemCardTemplate">
+    <article class="card">
+      <img class="card-img" alt="" />
+      <div class="card-body">
+        <div>
+          <strong class="card-name"></strong>
+          <div class="card-category"></div>
+        </div>
+        <button class="icon danger delete-btn" title="Delete">×</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
