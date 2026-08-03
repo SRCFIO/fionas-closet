@@ -17,3 +17,9 @@ A mobile-first wardrobe and styling game built with plain HTML, CSS, and JavaScr
 This is a static Vercel-compatible app with no build command. Merge the V3 branch into `main`; Vercel will redeploy the repository root automatically.
 
 Live trend and weather APIs are intentionally not fabricated. The data structures are ready for future moderated trend and permissioned weather integrations.
+
+## V3.5 Avatar Studio
+
+V3.5 adds local hairstyle, hair color, makeup, and vibe presets; a reset control; persistent avatar choices; and category-specific garment alignment for tops, bottoms, outerwear, shoes, hats, and bags.
+
+The approved Fiona avatar is integrated at `assets/fiona-avatar-approved.png` as a transparent, full-body Magic Mirror base layer. Her white blouse, black pleated skirt, and shoes form the default look; real wardrobe selections layer above it without stretching their source photography.
