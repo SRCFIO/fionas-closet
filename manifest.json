@@ -1,9 +1,1 @@
-{
-  "name": "Fiona's Closet",
-  "short_name": "Closet",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#f7f7f5",
-  "theme_color": "#111111",
-  "description": "A private digital wardrobe and outfit mix-and-match app."
-}
+{"name":"Fiona's Closet","short_name":"Closet","start_url":"./","display":"standalone","background_color":"#fffaf7","theme_color":"#ff6fa9","description":"A playful personal wardrobe, styling mirror, trend recreation, weather, and packing app."}
