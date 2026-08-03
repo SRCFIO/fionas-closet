@@ -1,117 +1,15 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#ff6fa9">
-  <meta name="description" content="Fiona's Closet — a playful personal styling game.">
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="styles.css">
-  <title>Fiona's Closet</title>
-</head>
-<body>
-  <div class="confetti" aria-hidden="true"></div>
-  <div class="app-shell">
-    <header class="topbar">
-      <button class="brand" data-route="home" aria-label="Go home"><span class="brand-mark">F</span><span>Fiona's<br><b>Closet</b></span></button>
-      <div class="top-actions">
-        <div class="streak" title="Style streak"><span>🔥</span><b id="streakCount">4</b></div>
-        <button class="icon-button" id="soundToggle" aria-label="Toggle sounds">♫</button>
-        <button class="avatar-button" data-route="profile" aria-label="Open profile">F</button>
-      </div>
-    </header>
-
-    <main id="app" tabindex="-1">
-      <section class="view active" data-view="home">
-        <div class="hero-room">
-          <div class="hero-copy">
-            <span class="eyebrow sticker">Today’s style quest ✦</span>
-            <h1>What are we<br><em>wearing?</em></h1>
-            <p>Build a look, remix your closet, or discover a whole new vibe.</p>
-            <button class="primary jumbo" data-route="style">Style me <span>→</span></button>
-          </div>
-          <div class="closet-scene" aria-label="Illustrated bedroom closet">
-            <div class="window"><i></i><i></i><i></i><i></i></div>
-            <div class="wardrobe">
-              <div class="rail"></div>
-              <button class="hanging h1" data-route="closet" aria-label="Open closet">♡</button>
-              <button class="hanging h2" data-route="closet" aria-label="Open closet">★</button>
-              <button class="hanging h3" data-route="closet" aria-label="Open closet">96</button>
-              <span class="drawer"></span>
-            </div>
-            <button class="mirror" data-route="style" aria-label="Open Style Me"><span>STYLE<br>ME!</span></button>
-            <div class="rug"></div>
-            <button class="scene-hotspot closet-hotspot" data-route="closet"><span>My closet</span></button>
-            <button class="scene-hotspot discover-hotspot" data-route="discover"><span>Discover</span></button>
-          </div>
-        </div>
-
-        <div class="section-heading"><div><span class="kicker">Fresh for you</span><h2>Pick your next adventure</h2></div><button class="text-button" data-route="discover">See all →</button></div>
-        <div class="adventure-grid">
-          <button class="adventure trend" data-route="discover"><span class="floating-label">TRENDING</span><span class="big-icon">✦</span><strong>Trend<br>Treasure Hunt</strong><small>Find looks you can make now</small></button>
-          <button class="adventure remix" data-route="style"><span class="floating-label">QUICK PLAY</span><span class="big-icon">↻</span><strong>Closet<br>Remix</strong><small>Shuffle a surprise outfit</small></button>
-          <button class="adventure wishlist" data-route="wishlist"><span class="floating-label">IDEAS</span><span class="big-icon">♡</span><strong>Dream<br>Closet</strong><small>Save pieces that unlock looks</small></button>
-        </div>
-
-        <section class="challenge-card">
-          <div class="challenge-art"><span>7</span><i>DAY</i></div>
-          <div><span class="kicker">Mini challenge</span><h3>Wear one item in a new way</h3><p>Pick a favorite and let the Outfit Lab create three fresh combinations.</p></div>
-          <button class="primary" data-route="style">Play</button>
-        </section>
-      </section>
-
-      <section class="view" data-view="closet">
-        <div class="page-intro closet-intro"><div><span class="eyebrow">My fashion universe</span><h1>My Closet <span>♡</span></h1><p>Tap any piece to feature it in an outfit.</p></div><button class="primary" id="addItem">＋ Add item</button></div>
-        <div class="toolbar"><label class="search">⌕ <input id="closetSearch" type="search" placeholder="Search my closet"></label><div class="filter-pills" id="closetFilters"></div></div>
-        <div class="closet-summary"><span><b id="itemCount">0</b> pieces</span><span>✦ <b id="comboCount">0</b> possible looks</span><button id="surpriseMe">Surprise me!</button></div>
-        <div class="garment-grid" id="garmentGrid"></div>
-      </section>
-
-      <section class="view" data-view="style">
-        <div class="page-intro style-intro"><div><span class="eyebrow">Outfit Lab</span><h1>Mix. Match. Magic. ✦</h1><p>Choose a mood, then tap the pieces you love.</p></div><div class="score-bubble"><span id="styleScore">92</span><small>style score</small></div></div>
-        <div class="mood-row" id="moodRow"></div>
-        <div class="outfit-lab">
-          <aside class="piece-dock"><div class="dock-tabs" id="dockTabs"></div><div id="dockItems" class="dock-items"></div></aside>
-          <div class="outfit-stage">
-            <div class="sparkle s1">✦</div><div class="sparkle s2">✦</div>
-            <div class="stage-title"><span id="lookName">Weekend Pop</span><button id="renameLook" aria-label="Rename look">✎</button></div>
-            <div class="mannequin" id="mannequin"><div class="head"></div><div class="body-line"></div><div class="outfit-slot top-slot" id="topSlot"><span>Choose a top</span></div><div class="outfit-slot bottom-slot" id="bottomSlot"><span>Choose a bottom</span></div><div class="outfit-slot shoe-slot" id="shoeSlot"><span>Choose shoes</span></div></div>
-            <div class="stage-actions"><button class="secondary" id="shuffleLook">↻ Shuffle</button><button class="primary" id="saveLook">♡ Save look</button></div>
-          </div>
-          <aside class="style-notes"><span class="tape"></span><h3>Stylist note!</h3><p id="styleNote">The playful colors balance each other. Add a tiny bag to finish the story.</p><div class="match-meter"><span>Closet match</span><b id="matchValue">100%</b><i><em id="matchBar"></em></i></div><button class="text-button" data-route="discover">Find matching trends →</button></aside>
-        </div>
-      </section>
-
-      <section class="view" data-view="discover">
-        <div class="page-intro discover-intro"><div><span class="eyebrow">Explore your style</span><h1>Discover <span>✦</span></h1><p>Fresh aesthetics, translated into outfits from your closet.</p></div><button class="secondary" id="refreshTrends">↻ Refresh ideas</button></div>
-        <div class="discover-tabs" id="discoverTabs"></div>
-        <article class="trend-feature">
-          <div class="trend-collage"><div class="photo-card p1">SPORTY</div><div class="photo-card p2">POP</div><div class="photo-card p3">LAYER</div><span class="trend-sticker">HOT<br>NOW!</span></div>
-          <div class="trend-copy"><span class="kicker">✦ Trending now</span><h2>Playful Sporty Layers</h2><p>Oversized graphics, relaxed bottoms, bright details, and one unexpected accessory.</p><div class="owned"><b>3/4</b><span>You already own most of this look</span></div><div class="meter"><i style="width:82%"></i></div><div class="button-row"><button class="primary" id="tryTrend">Get the look</button><button class="secondary" data-route="wishlist">＋ missing piece</button></div></div>
-        </article>
-        <div class="section-heading"><div><span class="kicker">Made for Fiona</span><h2>Style worlds to explore</h2></div></div>
-        <div class="world-grid" id="worldGrid"></div>
-      </section>
-
-      <section class="view" data-view="wishlist">
-        <div class="page-intro wish-intro"><div><span class="eyebrow">Dream closet</span><h1>Wishlist <span>♡</span></h1><p>Collect ideas and see how many new outfits each piece unlocks.</p></div><button class="primary" id="addWish">＋ Add an idea</button></div>
-        <div class="wishlist-hero"><div><span class="kicker">Smart wardrobe tip</span><h2>One great piece can change everything</h2><p>The cream cardigan on your list could unlock <b>11 outfits</b> using things you already own.</p></div><div class="orbit"><span>＋11</span><i>new<br>looks</i></div></div>
-        <div class="wish-grid" id="wishGrid"></div>
-      </section>
-
-      <section class="view" data-view="profile">
-        <div class="page-intro"><div><span class="eyebrow">My style story</span><h1>Fiona’s profile</h1><p>Your saved looks and favorite moods live here.</p></div></div>
-        <div class="profile-board"><div class="profile-card"><div class="profile-avatar">F</div><h2>Style Explorer</h2><p>Level 4 · 320 sparkle points</p><div class="progress"><i></i></div></div><div class="stats"><div><b id="savedStat">0</b><span>Saved looks</span></div><div><b>4</b><span>Day streak</span></div><div><b>6</b><span>Style worlds</span></div></div></div>
-      </section>
-    </main>
-
-    <nav class="bottom-nav" aria-label="Main navigation">
-      <button class="active" data-route="home"><span>⌂</span>Home</button><button data-route="closet"><span>♢</span>Closet</button><button class="style-nav" data-route="style"><span>✦</span>Style Me</button><button data-route="discover"><span>◉</span>Discover</button><button data-route="wishlist"><span>♡</span>Wishlist</button>
-    </nav>
-  </div>
-
-  <dialog id="itemDialog"><form method="dialog" id="itemForm"><button class="dialog-close" value="cancel" aria-label="Close">×</button><span class="eyebrow">New closet piece</span><h2>Add something fabulous</h2><label>Name<input name="name" required placeholder="Pink striped shirt"></label><label>Category<select name="category"><option>Top</option><option>Bottom</option><option>Outerwear</option><option>Shoes</option><option>Accessory</option></select></label><label>Photo<input name="photo" type="file" accept="image/*"></label><div class="button-row"><button class="secondary" value="cancel">Cancel</button><button class="primary" value="default">Add to closet</button></div></form></dialog>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="app.js"></script>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ff6fa9"><title>Fiona's Closet V3</title><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="styles.css"></head>
+<body><div class="app">
+<header><button class="brand" data-go="home"><b>F</b><span>Fiona's<br><strong>Closet</strong></span></button><div class="header-actions"><span class="weather-pill" id="weatherPill">☀️ 68°F</span><button data-go="profile">✨ <span id="sparkles">320</span></button></div></header>
+<main>
+<section class="screen active" id="home"><div class="room"><div class="welcome"><span class="sticker">TODAY'S STYLE QUEST</span><h1>Step into your<br><em>style world!</em></h1><p>Dress the mirror, recreate a trend, or pack a tiny fashion adventure.</p><button class="primary big" data-go="style">Open the magic mirror →</button></div><div class="room-art"><div class="window">☀️</div><button class="wardrobe-door" data-go="closet"><span>♡</span><i>MY CLOSET</i></button><button class="room-mirror" data-go="style"><span>F</span><i>STYLE ME</i></button><div class="rug"></div></div></div><div class="quest-grid"><button data-go="discover" class="quest pink"><span>✦</span><b>Recreate It</b><small>Turn inspiration into her closet</small></button><button data-go="pack" class="quest mint"><span>✈</span><b>Pack With Me</b><small>Build a travel capsule</small></button><button data-go="weather" class="quest lilac"><span>☀</span><b>Dress for Weather</b><small>Looks for today</small></button></div></section>
+<section class="screen" id="closet"><div class="title-row"><div><span class="eyebrow">31 real pieces + your additions</span><h1>My Closet ♡</h1></div><button class="primary" id="addItem">＋ Add item</button></div><div class="toolbar"><input id="search" placeholder="Search my closet"><div id="filters" class="pills"></div></div><div id="closetGrid" class="closet-grid"></div></section>
+<section class="screen" id="style"><div class="title-row"><div><span class="eyebrow">Full-body outfit builder</span><h1>The Magic Mirror ✦</h1></div><div class="score"><b id="score">92</b><small>style score</small></div></div><div class="lab"><aside><div id="categoryRail" class="category-rail"></div><div id="picker" class="picker"></div></aside><div class="mirror-stage"><div class="mirror-frame"><div class="avatar"><div class="avatar-head"><span></span></div><div class="avatar-body"></div><div class="wear top-wear" id="wearTop"></div><div class="wear outer-wear" id="wearOuterwear"></div><div class="wear bottom-wear" id="wearBottom"></div><div class="wear shoe-wear" id="wearShoes"></div><div class="wear accessory-wear" id="wearAccessory"></div></div></div><h2 id="lookTitle">Fiona's Look</h2><div class="mirror-actions"><button class="secondary" id="shuffle">↻ Shuffle</button><button class="primary" id="saveLook">♡ Save</button></div></div><aside class="stylist-card"><span>STYLIST NOTE</span><h3 id="whyTitle">Why this works</h3><p id="whyText">Pick a top, bottom, and shoes to create a complete silhouette.</p><div class="refine"><button data-refine="cooler">Make it cooler</button><button data-refine="sporty">More sporty</button><button data-refine="preppy">More preppy</button></div></aside></div></section>
+<section class="screen" id="discover"><div class="title-row"><div><span class="eyebrow">Curated sample inspiration</span><h1>Discover & Recreate ✦</h1><p>Explore looks beyond Fiona's closet, then translate them into pieces she owns.</p></div></div><div class="notice">These are curated style concepts—not live internet claims. A future moderated trend API can plug into this feed.</div><div id="trendGrid" class="trend-grid"></div></section>
+<section class="screen" id="weather"><div class="title-row"><div><span class="eyebrow">Weather-aware styling</span><h1>What works today? ☀</h1></div></div><div class="weather-card"><div><b id="weatherIcon">☀️</b><h2 id="weatherSummary">Mild & sunny · 68°F</h2><p>Choose the weather you see outside. Live weather can be connected later with permission.</p></div><div id="weatherChoices" class="weather-choices"><button data-weather="sunny" class="active">☀ Sunny</button><button data-weather="cool">☁ Cool</button><button data-weather="rain">☂ Rain</button><button data-weather="hot">☀ Hot</button></div></div><button class="primary big" id="weatherLook">Make my weather look →</button></section>
+<section class="screen" id="pack"><div class="title-row"><div><span class="eyebrow">Travel capsule game</span><h1>Pack With Me ✈</h1></div></div><div class="pack-builder"><label>Trip vibe<select id="tripVibe"><option>City weekend</option><option>Beach break</option><option>School trip</option><option>Family holiday</option></select></label><label>How many days?<input id="tripDays" type="number" min="1" max="14" value="3"></label><label>Weather<select id="tripWeather"><option>Mild</option><option>Warm</option><option>Cool</option><option>Rainy</option></select></label><button class="primary" id="buildPack">Build my capsule</button></div><div id="packResult" class="pack-result"></div></section>
+<section class="screen" id="wishlist"><div class="title-row"><div><span class="eyebrow">Pieces that unlock outfits</span><h1>Dream Closet ♡</h1></div><button class="primary" id="addWish">＋ Add idea</button></div><div id="wishGrid" class="wish-grid"></div></section>
+<section class="screen" id="profile"><div class="title-row"><div><span class="eyebrow">Style story</span><h1>Fiona's favorites</h1></div></div><div id="savedGrid" class="saved-grid"></div></section>
+</main><nav><button class="active" data-go="home">⌂<span>Home</span></button><button data-go="closet">♢<span>Closet</span></button><button class="magic" data-go="style">✦<span>Style Me</span></button><button data-go="discover">◉<span>Discover</span></button><button data-go="pack">✈<span>Pack</span></button></nav></div>
+<dialog id="itemDialog"><form id="itemForm"><button type="button" class="close">×</button><span class="eyebrow">New wardrobe piece</span><h2>Add an item</h2><label>Name<input name="name" required></label><label>Category<select name="category"><option>Top</option><option>Bottom</option><option>Outerwear</option><option>Shoes</option><option>Accessory</option></select></label><label>Photo<input name="photo" type="file" accept="image/*" required></label><img id="preview" alt="Item preview"><p class="tiny">The photo stays on this browser. For catalog-quality background removal, use the existing cleaned-asset workflow.</p><button class="primary" type="submit">Save to closet</button></form></dialog><div id="toast" class="toast"></div><script src="app.js"></script></body></html>
