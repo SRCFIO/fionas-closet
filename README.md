@@ -1,11 +1,11 @@
 # Fiona's Closet V2.1
 
-A polished, mobile-first tween fashion game built as a static website. V2.1 turns the digital wardrobe into a playful fashion world with richer visual storytelling and interactive outfit discovery.
+A polished, mobile-first tween fashion game built as a static website. This complete deployment package includes 31 cleaned wardrobe photographs connected to the Closet and Outfit Lab.
 
 ## What is included
 
 - Layered illustrated Home screen with tappable closet, mirror, and discovery areas
-- Searchable and filterable Closet with favorites and add-item flow
+- Searchable and filterable Closet with 31 real garments, favorites, and add-item flow
 - Interactive Style Me / Outfit Lab with moods, outfit slots, shuffle, scores, and saved looks
 - Discover experience with closet-match trend cards and six style worlds
 - Wishlist showing how many outfits a new garment could unlock
@@ -17,22 +17,23 @@ A polished, mobile-first tween fashion game built as a static website. V2.1 turn
 
 This app uses plain HTML, CSS, and JavaScript. There is no build step.
 
-Replace these files in the existing `SRCFIO/fionas-closet` repository:
+Upload everything in this folder to the existing `SRCFIO/fionas-closet` repository:
 
 - `index.html`
 - `styles.css`
 - `app.js`
 - `README.md`
+- `assets/` (31 PNG garment images)
 
-Keep the existing `assets/`, `manifest.json`, `seed.json`, and `service-worker.js` files. Vercel will automatically redeploy after the GitHub commit.
+The included `assets/` folder is ready to replace or merge with the existing assets folder. Keep the existing `manifest.json` and `service-worker.js` files if GitHub does not show them in this package. Vercel will automatically redeploy after the GitHub commit.
 
 ## Existing garment images
 
-V2.1 looks for optional images using predictable paths such as:
+V2.1 loads the included images using predictable paths such as:
 
 `assets/top-pink.png`, `assets/top-jersey.png`, `assets/bottom-cargo.png`, and so on.
 
-If a matching image is missing, the interface shows a colorful garment placeholder. Existing or cleaned photographs can be connected by changing the `id` or adding an `image` value to an item in `app.js`.
+If an image is ever missing, the interface shows a colorful garment placeholder instead of a broken image.
 
 ## Notes
 

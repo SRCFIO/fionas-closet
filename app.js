@@ -2,20 +2,42 @@
   const $ = (s, p=document) => p.querySelector(s), $$ = (s,p=document) => [...p.querySelectorAll(s)];
   const colors=['#ff76a8','#8edfc4','#9271e6','#ffd05f','#72cbe7','#ef91da'];
   const fallbackItems=[
-    {id:'top-pink',name:'Pink Pop Tee',category:'Top',color:'#ff79ac',icon:'♡'},
-    {id:'top-jersey',name:'Graphic 96 Jersey',category:'Top',color:'#33243e',icon:'96'},
-    {id:'top-stripe',name:'Striped Ruffle Shirt',category:'Top',color:'#e8a7b9',icon:'✦'},
-    {id:'bottom-cargo',name:'Black Cargo Pants',category:'Bottom',color:'#4b4653',icon:'✦'},
-    {id:'bottom-plaid',name:'Plaid Mini Skirt',category:'Bottom',color:'#9b6f86',icon:'▦'},
-    {id:'bottom-gray',name:'Soft Gray Skirt',category:'Bottom',color:'#a9a7b0',icon:'♡'},
-    {id:'outer-denim',name:'Cropped Denim Jacket',category:'Outerwear',color:'#72b7dd',icon:'★'},
-    {id:'shoe-sneaker',name:'Retro Sneakers',category:'Shoes',color:'#e9e6da',icon:'⚡'},
-    {id:'acc-bag',name:'Mini Shoulder Bag',category:'Accessory',color:'#f6c75e',icon:'☻'}
+    {id:'01-brown-charm-crossbody-bag',name:'Brown Charm Crossbody Bag',category:'Accessory',color:'#a97d5f',icon:'♡'},
+    {id:'02-black-charm-combat-boots',name:'Black Charm Combat Boots',category:'Shoes',color:'#38323c',icon:'✦'},
+    {id:'03-black-pink-piped-track-pants',name:'Black & Pink Track Pants',category:'Bottom',color:'#4c3b4e',icon:'⚡'},
+    {id:'04-pink-ambitious-dreamer-long-sleeve',name:'Ambitious Dreamer Top',category:'Top',color:'#ee7ca9',icon:'♡'},
+    {id:'05-white-ribbed-long-sleeve-top',name:'White Ribbed Long-Sleeve',category:'Top',color:'#eeeae4',icon:'✦'},
+    {id:'06-black-alo-cap',name:'Black Alo Cap',category:'Accessory',color:'#39353e',icon:'★'},
+    {id:'07-blue-embroidered-dress-sandals',name:'Blue Embroidered Sandals',category:'Shoes',color:'#75a7d7',icon:'✦'},
+    {id:'08-sage-pink-zip-hoodie',name:'Sage & Pink Zip Hoodie',category:'Outerwear',color:'#93bd9f',icon:'♡'},
+    {id:'09-navy-cream-nike-retro-sneakers',name:'Nike Retro Sneakers',category:'Shoes',color:'#49526b',icon:'⚡'},
+    {id:'10-cream-puff-sleeve-ruffle-blouse',name:'Cream Ruffle Blouse',category:'Top',color:'#eee0c8',icon:'♡'},
+    {id:'11-cream-contrast-trim-knit-vest',name:'Contrast-Trim Knit Vest',category:'Top',color:'#e7d8bd',icon:'✦'},
+    {id:'12-black-cream-tweed-skort',name:'Black & Cream Tweed Skort',category:'Bottom',color:'#84777c',icon:'▦'},
+    {id:'13-black-nike-boxy-sweatshirt',name:'Nike Boxy Sweatshirt',category:'Top',color:'#403a43',icon:'★'},
+    {id:'14-black-ribbed-turtleneck',name:'Black Ribbed Turtleneck',category:'Top',color:'#37323a',icon:'✦'},
+    {id:'15-cream-cable-knit-sweater',name:'Cream Cable-Knit Sweater',category:'Top',color:'#e9dcc4',icon:'♡'},
+    {id:'16-navy-paris-cap',name:'Navy Paris Cap',category:'Accessory',color:'#37405d',icon:'★'},
+    {id:'17-black-cropped-hooded-jacket',name:'Black Cropped Hooded Jacket',category:'Outerwear',color:'#3e3941',icon:'⚡'},
+    {id:'18-black-heart-puff-sleeve-top',name:'Black Heart Puff-Sleeve Top',category:'Top',color:'#413941',icon:'♡'},
+    {id:'19-blue-snoopy-denim-tote',name:'Blue Snoopy Denim Tote',category:'Accessory',color:'#6d97bb',icon:'☻'},
+    {id:'20-cream-knit-tank',name:'Cream Knit Tank',category:'Top',color:'#eadcc5',icon:'✦'},
+    {id:'21-grey-washed-wide-leg-jeans',name:'Grey Wide-Leg Jeans',category:'Bottom',color:'#8d9099',icon:'⚡'},
+    {id:'22-cream-distressed-knit-cropped-sweater',name:'Distressed Cropped Sweater',category:'Top',color:'#e7dbc6',icon:'✦'},
+    {id:'23-black-open-knit-wrap-cardigan',name:'Black Open-Knit Cardigan',category:'Outerwear',color:'#433b43',icon:'♡'},
+    {id:'24-grey-washed-denim-skort',name:'Grey Washed Denim Skort',category:'Bottom',color:'#8d9098',icon:'▦'},
+    {id:'25-grey-cargo-jeans',name:'Grey Cargo Jeans',category:'Bottom',color:'#8b8b91',icon:'⚡'},
+    {id:'26-beige-chunky-sneakers',name:'Beige Chunky Sneakers',category:'Shoes',color:'#cbb79e',icon:'★'},
+    {id:'27-black-hooded-jacket',name:'Black Hooded Jacket',category:'Outerwear',color:'#3f3a42',icon:'✦'},
+    {id:'28-silver-grey-new-balance-sneakers',name:'New Balance Sneakers',category:'Shoes',color:'#aaa8ac',icon:'⚡'},
+    {id:'29-blue-white-pinstripe-drawstring-pants',name:'Pinstripe Drawstring Pants',category:'Bottom',color:'#a8c7df',icon:'✦'},
+    {id:'30-plaid-bubble-skort',name:'Plaid Bubble Skort',category:'Bottom',color:'#9b897e',icon:'▦'},
+    {id:'31-grey-floral-track-pants',name:'Grey Floral Track Pants',category:'Bottom',color:'#8f8c91',icon:'♡'}
   ];
   const worlds=[['K-Sporty Pop','Jerseys, wide legs & shiny details','⚡','#ff9abd'],['Soft Academia','Plaid, cardigans & clever layers','✎','#d8c7ff'],['Color Splash','Unexpected brights that love each other','✦','#ffda6b'],['Skater Weekend','Relaxed shapes with graphic energy','★','#94dfca'],['Sweet Vintage','Tiny florals, denim & playful accessories','♡','#f4b1d6'],['Clean Remix','Simple favorites styled a new way','↻','#9ddcf0']];
   const wishes=[['Cream cardigan','🧶',11,'#fff0c6'],['Cherry red sneakers','👟',8,'#ffd5df'],['Silver mini bag','👜',7,'#e2ddf5'],['Striped rugby top','👕',9,'#d8f4e8'],['Denim maxi skirt','👗',6,'#d7eafa'],['Star hair clips','★',5,'#fff0a8']];
   const moods=['🎀 Cute','⚡ Sporty','✦ Bold','☁ Cozy','★ School','♡ Surprise me'];
-  const state={items:load('fc_items',fallbackItems),saved:load('fc_saved',[]),favorites:load('fc_faves',[]),filter:'All',dock:'Top',mood:'🎀 Cute',selected:{Top:null,Bottom:null,Shoes:null}};
+  const state={items:load('fc_items_v21',fallbackItems),saved:load('fc_saved',[]),favorites:load('fc_faves',[]),filter:'All',dock:'Top',mood:'🎀 Cute',selected:{Top:null,Bottom:null,Shoes:null}};
   function load(k,f){try{return JSON.parse(localStorage.getItem(k))||f}catch{return f}} function save(k,v){localStorage.setItem(k,JSON.stringify(v))}
   function route(name){$$('.view').forEach(v=>v.classList.toggle('active',v.dataset.view===name));$$('[data-route]').forEach(b=>b.classList.toggle('active',b.dataset.route===name&&b.closest('.bottom-nav')));window.scrollTo({top:0,behavior:'smooth'});$('#app').focus({preventScroll:true});}
   $$('[data-route]').forEach(b=>b.addEventListener('click',()=>route(b.dataset.route)));
@@ -35,7 +57,7 @@
   function renderDiscover(){const tabs=['For You','Trending Now','Use My Closet','Try Something New'];$('#discoverTabs').innerHTML=tabs.map((x,i)=>`<button class="${i===0?'active':''}">${x}</button>`).join('');$$('#discoverTabs button').forEach(b=>b.onclick=()=>{$$('#discoverTabs button').forEach(x=>x.classList.remove('active'));b.classList.add('active');toast(`${b.textContent} inspiration loaded`)});$('#worldGrid').innerHTML=worlds.map(w=>`<button class="world-card" style="background:${w[3]}" data-world="${w[0]}"><strong>${w[0]}</strong><small>${w[1]}</small><span class="world-icon">${w[2]}</span></button>`).join('');$$('[data-world]').forEach(b=>b.onclick=()=>{state.mood='✦ Bold';route('style');shuffle();$('#lookName').textContent=b.dataset.world})}
   function renderWishlist(){ $('#wishGrid').innerHTML=wishes.map((w,i)=>`<article class="wish-card"><div class="wish-visual" style="background:${w[3]}">${w[1]}</div><span class="unlock">UNLOCKS ${w[2]} LOOKS</span><h3>${w[0]}</h3><small>Works with ${Math.min(state.items.length,5+i)} pieces you own</small><div class="wish-actions"><button class="secondary wish-remove">Remove</button><button class="primary wish-style">Try it</button></div></article>`).join('');$$('.wish-remove').forEach(b=>b.onclick=()=>{b.closest('.wish-card').remove();toast('Removed from wishlist')});$$('.wish-style').forEach(b=>b.onclick=()=>{route('style');shuffle()})}
   $('#refreshTrends').onclick=()=>{worlds.sort(()=>Math.random()-.5);renderDiscover();toast('Fresh style worlds loaded ✦')};$('#tryTrend').onclick=()=>{route('style');shuffle();$('#lookName').textContent='Sporty Layers'};$('#addWish').onclick=()=>{const n=prompt('What garment are you dreaming of?');if(n){wishes.unshift([n,'✦',Math.ceil(Math.random()*9)+3,colors[Math.floor(Math.random()*colors.length)]]);renderWishlist();toast('Idea added to your dream closet')}};
-  const dlg=$('#itemDialog'),form=$('#itemForm');$('#addItem').onclick=()=>dlg.showModal();form.addEventListener('submit',e=>{e.preventDefault();const fd=new FormData(form),file=fd.get('photo');const finish=image=>{state.items.push({id:'custom-'+Date.now(),name:fd.get('name'),category:fd.get('category'),color:colors[state.items.length%colors.length],icon:'✦',image});save('fc_items',state.items);dlg.close();form.reset();state.filter='All';renderFilters();renderCloset();toast('New piece added!')};if(file&&file.size){const r=new FileReader();r.onload=()=>finish(r.result);r.readAsDataURL(file)}else finish(null)});
+  const dlg=$('#itemDialog'),form=$('#itemForm');$('#addItem').onclick=()=>dlg.showModal();form.addEventListener('submit',e=>{e.preventDefault();const fd=new FormData(form),file=fd.get('photo');const finish=image=>{state.items.push({id:'custom-'+Date.now(),name:fd.get('name'),category:fd.get('category'),color:colors[state.items.length%colors.length],icon:'✦',image});save('fc_items_v21',state.items);dlg.close();form.reset();state.filter='All';renderFilters();renderCloset();toast('New piece added!')};if(file&&file.size){const r=new FileReader();r.onload=()=>finish(r.result);r.readAsDataURL(file)}else finish(null)});
   $('#soundToggle').onclick=e=>{e.currentTarget.textContent=e.currentTarget.textContent==='♫'?'♪̸':'♫';toast(e.currentTarget.textContent==='♫'?'Sounds on':'Sounds off')};
   function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2200)}
   function confetti(){const wrap=$('.confetti');for(let i=0;i<28;i++){const p=document.createElement('i');p.style.left=Math.random()*100+'vw';p.style.background=colors[i%colors.length];p.style.animationDelay=Math.random()*.35+'s';p.style.transform=`rotate(${Math.random()*180}deg)`;wrap.append(p);setTimeout(()=>p.remove(),2000)}}
