@@ -1,4 +1,4 @@
-# Fiona's Closet V3
+# Fiona's Closet V4.0 Product Polish
 
 A mobile-first wardrobe and styling game built with plain HTML, CSS, and JavaScript. V3 preserves the 31 cleaned wardrobe assets while making the outfit the hero.
 
@@ -23,3 +23,12 @@ Live trend and weather APIs are intentionally not fabricated. The data structure
 V3.5 adds local hairstyle, hair color, makeup, and vibe presets; a reset control; persistent avatar choices; and category-specific garment alignment for tops, bottoms, outerwear, shoes, hats, and bags.
 
 The approved Fiona avatar is integrated at `assets/fiona-avatar-approved.png` as a transparent, full-body Magic Mirror base layer. Her white blouse, black pleated skirt, and shoes form the default look; real wardrobe selections layer above it without stretching their source photography.
+
+## V4.0 Product Polish
+
+- Interactive illustrated bedroom Home with tappable fashion-game objects
+- Centralized garment-fit metadata for anchors, offsets, scale, bounds, and layers
+- Three visible locally persisted hairstyles with reset
+- Category-by-category Recreate This Look matching, alternatives, Wishlist handoff, and Magic Mirror reconstruction
+- Owned-item travel capsules with activities, weather, visual checklists, and unique day-by-day outfits
+- Motion polish with reduced-motion fallbacks and refreshed offline caching
